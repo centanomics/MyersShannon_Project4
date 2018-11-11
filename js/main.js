@@ -53,6 +53,28 @@ class Assignment {
 
     addListeners() {
         document.querySelector('#searchForm').addEventListener('submit', this.searchForCharacter.bind(this));
+        document.querySelector('#transcribeForm').addEventListener('submit', this.getTranscription.bind(this));
+    }
+
+    getTranscription(e) {
+        e.preventDefault();
+        let word = e.target.querySelector('input').value;
+        if(this.validate(word)) {
+            this.transcribeWord(word);
+        }
+    }
+
+    transcribeWord(word) {
+        let config = {
+            method: 'GET'
+        }
+        let key = 'aa25a0f2-55f1-47ed-bf80-dccca1199bab'
+        fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word}?key=${key}`, config) 
+            .then(response => response.json())
+            .then(responseAsJson => {
+                let ipa = responseAsJson[0].hwi.prs[0].mw
+                console.log(ipa);
+            })
     }
 
     searchForCharacter(e) {
