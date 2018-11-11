@@ -6,8 +6,9 @@ window.addEventListener('DOMContentLoaded', () => {
 class Assignment {
     constructor() {
         console.log('Singleton loaded');
-        let consonants = this.getCharacters('consonant');
-        let vowels = this.getCharacters('vowel');
+        this.consonants = this.getCharacters('consonant');
+        this.vowels = this.getCharacters('vowel');
+        this.check = 0;
     }
 
     static getInstance() {
@@ -34,10 +35,84 @@ class Assignment {
             .then(response => response.json())
             .then(responseAsJson => {
                 returnJSON = responseAsJson;
-                return returnJSON;
+                if(Number(this.check) !== 1) {
+                    console.log(this.check);
+                    this.check++;
+                    this.consonants = returnJSON;
+                } else {
+                    console.log('reached it');
+                    this.vowels = returnJSON;
+                    this.addListeners();
+                }
             })
             .catch(error => {
                 console.log('Error occured: ', error);
             });
+        
+    }
+
+    addListeners() {
+        document.querySelector('#searchForm').addEventListener('submit', this.searchForCharacter.bind(this));
+    }
+
+    searchForCharacter(e) {
+        e.preventDefault();
+        let searchTerm = e.target.querySelector('input:first-child');
+        let searchType = Number(e.target.querySelector('select').selectedIndex);
+        if(this.validate(searchTerm.value)) {
+            this.getSearchResults(searchTerm.value, searchType);
+            //console.log(this.consonants);
+            searchTerm.value = '';
+        }
+    }
+
+    getSearchResults(term, type) {
+        let results = [];
+        if(type === 0) {
+            for(let i = 0; i < this.consonants.length; i++) {
+                if(this.consonants[i].name.indexOf(term) !== -1) {
+                    results.push(this.consonants[i]);
+                }
+            }
+            for(let i = 0; i < this.vowels.length; i++) {
+                if(this.vowels[i].name.indexOf(term) !== -1) {
+                    results.push(this.vowels[i]);
+                }
+            }
+        } else if (type === 1) {
+            for(let i = 0; i < this.consonants.length; i++) {
+                if(this.consonants[i].place.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+                    results.push(this.consonants[i]);
+                }
+            }
+        } else if (type === 2) {
+            for(let i = 0; i < this.consonants.length; i++) {
+                if(this.consonants[i].manner.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+                    results.push(this.consonants[i]);
+                }
+            }
+        } else if (type === 3) {
+            for(let i = 0; i < this.vowels.length; i++) {
+                if(this.vowels[i].place.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+                    results.push(this.vowels[i]);
+                }
+            }
+        } else {
+            for(let i = 0; i < this.vowels.length; i++) {
+                if(this.vowels[i].manner.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+                    results.push(this.vowels[i]);
+                }
+            }
+        }
+        console.log(results);
+    }
+
+    validate(term) {
+        if(term !== '') {
+            return true;
+        } else {
+            console.log('need to type something in');
+            return false;
+        }
     }
 }

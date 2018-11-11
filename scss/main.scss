@@ -1,0 +1,16 @@
+body {
+    background: url("../img/romain-vignes-53940-unsplash.jpg") no-repeat center;
+    .container {
+        background: rgba(0, 128, 0, 0.534);
+    }
+}
+
+.main {
+    ul li {
+        display: inline;
+    }
+
+    span {
+        color: blue;
+    }
+}
