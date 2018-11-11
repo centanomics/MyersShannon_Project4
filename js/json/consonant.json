@@ -1,0 +1,173 @@
+[ 
+	{
+		"name" : "Bilabial Nasal",
+		"symbol" : "&#109;",
+		"place": "Labial",
+		"manner" : "Nasal",
+		"example": "hi<strong>m</strong>"
+	},
+	{
+		"name" : "Alveolar Nasal",
+		"symbol" : "&#110;",
+		"place": "Alveolar",
+		"manner" : "Nasal",
+		"example": "<strong>n</strong>ice"
+	},
+	{
+		"name" : "Velar Nasal",
+		"symbol" : "&#331;",
+		"place": "Velar",
+		"manner" : "Nasal",
+		"example": "si<strong>ng</strong>"
+	},
+	{
+		"name" : "Voiceless Bilabial Stop",
+		"symbol" : "&#112;",
+		"place": "Bilabial",
+		"manner" : "Plosive",
+		"example": "<strong>p</strong>ain"
+	},
+	{
+		"name" : "Voiced Bilabial Stop",
+		"symbol" : "&#98;",
+		"place": "Bilabial",
+		"manner" : "Plosive",
+		"example": "<strong>b</strong>oy"
+	},
+	{
+		"name" : "Voiceless Alveolar Stop",
+		"symbol" : "&#116;",
+		"place": "Alveolar",
+		"manner" : "Plosive",
+		"example": "<strong>t</strong>ime"
+	},
+	{
+		"name" : "Voiced Alveolar Stop",
+		"symbol" : "&#100;",
+		"place": "Alveolar",
+		"manner" : "Plosive",
+		"example": "<strong>d</strong>ash"
+	},
+	{
+		"name" : "Voiceless Postalveolar Affricate",
+		"symbol" : "&#116;​&#643;",
+		"place": "Postalveolar",
+		"manner" : "Plosive",
+		"example": "<strong>ch</strong>ime"
+	},
+	{
+		"name" : "Voiced Postalveolar Affricate",
+		"symbol" : "&#100;​&#658;",
+		"place": "Postalveolar",
+		"manner" : "Plosive",
+		"example": "<strong>j</strong>ump"
+	},
+	{
+		"name" : "Voiceless Velar Stop",
+		"symbol" : "k",
+		"place": "Velar",
+		"manner" : "Plosive",
+		"example": "<strong>c</strong>at"
+	},
+	{
+		"name" : "Voiced Velar Stop",
+		"symbol" : "g",
+		"place": "Velar",
+		"manner" : "Plosive",
+		"example": "<strong>g</strong>ain"
+	},
+	{
+		"name" : "Voiceless Labiodental Fricitave",
+		"symbol" : "f",
+		"place": "Labiodental",
+		"manner" : "Fricitave",
+		"example": "<strong>f</strong>ill"
+	},
+	{
+		"name" : "Voiced Labiodental Fricitave",
+		"symbol" : "v",
+		"place": "Labiodental",
+		"manner" : "Fricitave",
+		"example": "<strong>v</strong>an"
+	},
+	{
+		"name" : "Voiceless Dental Fricitave",
+		"symbol" : "θ",
+		"place": "Dental",
+		"manner" : "Fricitave",
+		"example": "<strong>th</strong>in"
+	},
+	{
+		"name" : "Voiced Dental Fricitave",
+		"symbol" : "ð",
+		"place": "Dental",
+		"manner" : "Fricitave",
+		"example": "<strong>th</strong>is"
+	},
+	{
+		"name" : "Voiceless Alveolar Fricitave",
+		"symbol" : "s",
+		"place": "Alveolar",
+		"manner" : "Fricitave",
+		"example": "<strong>s</strong>it"
+	},
+	{
+		"name" : "Voiced Alveolar Fricitave",
+		"symbol" : "z",
+		"place": "Alveolar",
+		"manner" : "Fricitave",
+		"example": "<strong>z</strong>oo"
+	},
+	{
+		"name" : "Voiceless Postalveolar Fricitave",
+		"symbol" : "ʃ",
+		"place": "Postalveolar",
+		"manner" : "Fricitave",
+		"example": "<strong>sh</strong>annon"
+	},
+	{
+		"name" : "Voiced Postalveolar Fricitave",
+		"symbol" : "ʒ",
+		"place": "Postalveolar",
+		"manner" : "Fricitave",
+		"example": "vi<strong>si</strong>on"
+	},
+	{
+		"name" : "Alveolar Approximant",
+		"symbol" : "l",
+		"place": "Alveolar",
+		"manner" : "Approximant",
+		"example": "<strong>l</strong>et"
+	},
+	{
+		"name" : "Postalveolar Approximant",
+		"symbol" : "ɹ",
+		"place": "Postalveolar",
+		"manner" : "Approximant",
+		"example": "<strong>r</strong>ed"
+	},
+	{
+		"name" : "Palatal Approximant",
+		"symbol" : "j",
+		"place": "Palatal",
+		"manner" : "Approximant",
+		"example": "<strong>y</strong>ellow"
+	},
+	{
+		"name" : "Voiced Labio-velar Approximant",
+		"symbol" : "w",
+		"place": "Velar",
+		"manner" : "Approximant",
+		"example": "<strong>w</strong>eep"
+	},
+	{
+		"name" : "Voiceless Glottal Fricitave",
+		"symbol" : "h",
+		"place": "Glottal",
+		"manner" : "Fricitave",
+		"example": "<strong>h</strong>igh"
+	}
+]
+
+
+

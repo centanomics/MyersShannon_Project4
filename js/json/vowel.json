@@ -1,0 +1,72 @@
+[
+	{
+		"name" : "Near-close near-front unrounded vowel",
+		"symbol" : "ɪ",
+		"place" : "Near-close",
+		"manner": "Near-front",
+		"example": "s<strong>i</strong>t"
+	},
+	{
+		"name" : "Close front unrounded vowel",
+		"symbol" : "i",
+		"place" : "Close",
+		"manner": "Front",
+		"example": "fr<strong>ee</strong>"
+	},
+	{
+		"name" : "Near-close near-back rounded vowel",
+		"symbol" : "ʊ",
+		"place" : "Near-close",
+		"manner": "Near-back",
+		"example": "h<strong>oo</strong>k"
+	},
+	{
+		"name" : "Close back rounded vowel",
+		"symbol" : "u",
+		"place" : "Close",
+		"manner": "Back",
+		"example": "b<strong>oo</strong>t"
+	},
+	{
+		"name" : "Mid central vowel",
+		"symbol" : "ə",
+		"place" : "Mid",
+		"manner": "Central",
+		"example": "<strong>a</strong>bout"
+	},
+	{
+		"name" : "Open-mid front unrounded vowel",
+		"symbol" : "ɛ",
+		"place" : "Open-mid",
+		"manner": "Front",
+		"example": "b<strong>e</strong>d"
+	},
+	{
+		"name" : "Open-mid back unrounded vowel",
+		"symbol" : "ʌ",
+		"place" : "Open-mid",
+		"manner": "Back",
+		"example": "r<strong>u</strong>n"
+	},
+	{
+		"name" : "Open-mid back rounded vowel",
+		"symbol" : "ɔ",
+		"place" : "Open-mid",
+		"manner": "Back",
+		"example": "l<strong>aw</strong>"
+	},
+	{
+		"name" : "Near-open front unrounded vowel",
+		"symbol" : "æ",
+		"place" : "Near-open",
+		"manner": "Front",
+		"example": "c<strong>a</strong>t"
+	},
+	{
+		"name" : "Open back unrounded vowel",
+		"symbol" : "ɑ",
+		"place" : "Open",
+		"manner": "Back",
+		"example": "h<strong>o</strong>t"
+	}
+]
