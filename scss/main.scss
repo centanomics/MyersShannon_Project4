@@ -1,7 +1,15 @@
 body {
+    font-family: Helvetica, sans-serif
+}
+
+div.img {
     background: url("../img/romain-vignes-53940-unsplash.jpg") no-repeat center;
-    .container {
-        background: rgba(0, 128, 0, 0.534);
+    div.cover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+    color: black;
+    pre {
+        display: inline;
     }
 }
 
@@ -10,7 +18,32 @@ body {
         display: inline;
     }
 
-    span {
-        color: blue;
+    h1 {
+        font-family: 'adobe-caslon-pro', serif;
+        font-size: 4rem;
     }
+
+}
+
+#transcribeForm {
+    display: none;
+    div, button {
+        display: inline-block;
+    }
+}
+
+.active {
+    button {
+        color: orange;
+    }
+}
+
+#searchForm {
+    div, button {
+        display: inline-block;
+    }
+}
+
+strong {
+    color: skyblue;
 }

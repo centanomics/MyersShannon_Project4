@@ -1,10 +1,31 @@
 body {
-  background: url("../img/romain-vignes-53940-unsplash.jpg") no-repeat center; }
-  body .container {
-    background: rgba(0, 128, 0, 0.534); }
+  font-family: Helvetica, sans-serif; }
+
+div.img {
+  background: url("../img/romain-vignes-53940-unsplash.jpg") no-repeat center;
+  color: black; }
+  div.img div.cover {
+    background: rgba(255, 255, 255, 0.9); }
+  div.img pre {
+    display: inline; }
 
 .main ul li {
   display: inline; }
 
-.main span {
-  color: blue; }
+.main h1 {
+  font-family: 'adobe-caslon-pro', serif;
+  font-size: 4rem; }
+
+#transcribeForm {
+  display: none; }
+  #transcribeForm div, #transcribeForm button {
+    display: inline-block; }
+
+.active button {
+  color: orange; }
+
+#searchForm div, #searchForm button {
+  display: inline-block; }
+
+strong {
+  color: skyblue; }
