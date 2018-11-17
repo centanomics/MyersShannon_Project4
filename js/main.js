@@ -1,3 +1,5 @@
+/* jshint undef: true, unused: true, esversion: 6 */
+
 window.addEventListener('DOMContentLoaded', () => {
     console.log('Page loaded');
     let assignment = Assignment.getInstance();
@@ -30,8 +32,8 @@ class Assignment {
             headers: {
                 'content-type' : 'applications/json'
             }
-        }
-        let returnJSON = undefined;
+        };
+        let returnJSON;
         fetch(`js/json/${file}.json`, config)
             .then(response => response.json())
             .then(responseAsJson => {
@@ -60,7 +62,7 @@ class Assignment {
         document.querySelector('.random').addEventListener('click', this.getRandomCharacter.bind(this));
     }
 
-    getRandomCharacter(e) {
+    getRandomCharacter() {
         let arr = this.consonants.concat(this.vowels);
         let rnd = Math.floor((Math.random() * 34) + 1) - 1;
 
@@ -70,17 +72,22 @@ class Assignment {
 
         // text += `<h2 class="mt-4 text-primary">${arr[rnd].name}</h2>`;
 
-        text += '<div class="row">'
+        //text += '<div class="row">';
         text += '<article class="card my-4 mx-auto border border-primary">';
         text += `<h3 class="card-header">${arr[rnd].name}</h3>`;
         text += '<div class="card-body">';
         text += `<p>The ${arr[rnd].symbol} in ${arr[rnd].example}</p>`;
-        text += `<p>Place/Height: ${arr[rnd].place}</p>`;
-        text += `<p>Manner/Backness: ${arr[rnd].manner}</p>`;
+        if(arr[rnd].name.indexOf('vowel') !== -1 || arr[rnd].name === 'Schwa') {
+            text += `<p>Height: ${arr[rnd].place}</p>`;
+            text += `<p>Backness: ${arr[rnd].manner}</p>`;
+        } else {
+            text += `<p>Place: ${arr[rnd].place}</p>`;
+            text += `<p>Manner: ${arr[rnd].manner}</p>`;
+        }
         // text += `<p>${results[i].example}</p>`;
         text += '</div>';
         text += '</article>';
-        text += '</div>';
+        //text += '</div>';
 
         display.insertAdjacentHTML('afterbegin', text);
     }
@@ -91,6 +98,10 @@ class Assignment {
         list.querySelector('li:nth-of-type(2)').classList.add('active');
         document.querySelector('#searchForm').style.display = 'none';
         document.querySelector('#transcribeForm').style.display = 'block';
+        document.querySelector('#transcribeForm').reset();
+        document.querySelectorAll('input')[0].classList.remove('is-valid');
+        document.querySelectorAll('input')[0].classList.remove('is-invalid');
+        // document.querySelectorAll('input')[1].classList.remove('is-valid');
     }
 
     changeToTranscribe(e) {
@@ -99,12 +110,15 @@ class Assignment {
         list.querySelector('li:first-of-type').classList.add('active');
         document.querySelector('#searchForm').style.display = 'block';
         document.querySelector('#transcribeForm').style.display = 'none';
+        document.querySelector('#searchForm').reset();
+        document.querySelectorAll('input')[1].classList.remove('is-valid');
+        document.querySelectorAll('input')[1].classList.remove('is-invalid');
     }
 
     getTranscription(e) {
         e.preventDefault();
         let word = e.target.querySelector('input');
-        if(this.validate(word.value)) {
+        if(this.validate(word.value, word)) {
             this.transcribeWord(word);
         }
     }
@@ -112,20 +126,20 @@ class Assignment {
     transcribeWord(word) {
         let config = {
             method: 'GET'
-        }
+        };
         let key = 'aa25a0f2-55f1-47ed-bf80-dccca1199bab';
         fetch(`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${word.value}?key=${key}`, config) 
             .then(response => response.json())
             .then(responseAsJson => {
                 let ipa = responseAsJson[0].hwi.prs[0].mw;
-                console.log(ipa);
+                //console.log(ipa);
                 this.displayTransciption(ipa, word.value);
                 word.value = '';
             })
             .catch(error => {
                 console.log('Error occured: ', error);
                 this.displayTransciptionError(word.value);
-            })
+            });
     }
 
     displayTransciptionError(term) {
@@ -133,7 +147,9 @@ class Assignment {
         display.innerHTML = '';
         let text = '';
 
+        text += '<div class="text-center">';
         text += `<h2 class="mt-5">No results for <span class="text-primary">${term}</span>!</h2><p>Try typing in "hello" !</p>`;
+        text += '</div>';
         
         display.insertAdjacentHTML('afterbegin', text);
     }
@@ -142,7 +158,7 @@ class Assignment {
         e.preventDefault();
         let searchTerm = e.target.querySelector('input:first-child');
         let searchType = Number(e.target.querySelector('select').selectedIndex);
-        if(this.validate(searchTerm.value)) {
+        if(this.validate(searchTerm.value, searchTerm)) {
             let searchResults = this.getSearchResults(searchTerm.value, searchType);
             this.displayResults(searchTerm.value, searchResults);
             searchTerm.value = '';
@@ -152,27 +168,50 @@ class Assignment {
     displayResults(term, results) {
         let display = document.querySelector('.display');
         display.innerHTML = '';
-        let text = '';
+        let textVowels = '';
+        let textConsonants = '';
+        let returnText = '';
         if(results.length !== 0) {
-            text += `<h2 class="mt-4 text-primary">${term}</h2>`;
+            returnText += `<h2 class="mt-4 text-primary">${term}</h2>`;
             for(let i = 0; i < results.length; i++) {
-                text += '<div class="row">';
-                text += '<article class="card my-4 mx-auto border border-primary">';
-                text += `<h3 class="card-header">${results[i].name}</h3>`;
-                text += '<div class="card-body">';
-                text += `<p>The ${results[i].symbol} in ${results[i].example}</p>`;
-                text += `<p>Place/Height: ${results[i].place}</p>`;
-                text += `<p>Manner/Backness: ${results[i].manner}</p>`;
-                // text += `<p>${results[i].example}</p>`;
-                text += '</div>';
-                text += '</article>';
-                text += '</div>';
+                // text += '<div class="row">';
+                if(results[i].name.indexOf('vowel') !== -1 || results[i].name === 'Schwa') {
+                    textVowels += '<article class="card my-4 mx-3 border border-primary">';
+                    textVowels += `<h4 class="card-header">${results[i].name}</h4>`;
+                    textVowels += '<div class="card-body">';
+                    textVowels += `<p>The ${results[i].symbol} in ${results[i].example}</p>`;
+                    textVowels += `<p>Height: ${results[i].place}</p>`;
+                    textVowels += `<p>Backness: ${results[i].manner}</p>`;
+                    // textVowels += `<p>${results[i].example}</p>`;
+                    textVowels += '</div>';
+                    textVowels += '</article>';
+                } else {
+                    textConsonants += '<article class="card my-4 mx-3 border border-primary">';
+                    textConsonants += `<h4 class="card-header">${results[i].name}</h4>`;
+                    textConsonants += '<div class="card-body">';
+                    textConsonants += `<p>The ${results[i].symbol} in ${results[i].example}</p>`;
+                    textConsonants += `<p>Place: ${results[i].place}</p>`;
+                    textConsonants += `<p>Manner: ${results[i].manner}</p>`;
+                    // textConsonants += `<p>${results[i].example}</p>`;
+                    textConsonants += '</div>';
+                    textConsonants += '</article>';
+                }
+                //text += '</div>';
             }
         } else {
-            text += `<h2 class="mt-5">No results for <span class="text-primary">${term}</span>!</h2><p>Try searching for "labial" under the Consonant Place search type!</p>`;
+            returnText += '<div class="text-center mt-5">';
+            returnText += `<h2>No results for <span class="text-primary">${term}</span>!</h2><p>Try searching for "labial" under the Consonant Place search type!</p>`;
+            returnText += '</div>'
+        }
+        if(textConsonants !== '') {
+        returnText += '<h3>Consonant Sounds:</h3>';
+        returnText += `<div class="d-lg-flex flex-row flex-wrap justify-content-around">${textConsonants}</div>`;
+        } if(textVowels !== '') {
+        returnText += '<h3>Vowel Sounds:</h3>';
+        returnText += `<div class="d-lg-flex flex-row flex-wrap justify-content-around">${textVowels}</div>`;
         }
 
-        display.insertAdjacentHTML('afterbegin', text);
+        display.insertAdjacentHTML('afterbegin', returnText);
     }
 
     displayTransciption(phonetics, term) {
@@ -180,12 +219,12 @@ class Assignment {
         display.innerHTML = '';
         let text = '';
         
-        text += '<div class="row">'
+        text += '<div class="row">';
         text += '<article class=" my-5 card mx-auto border border-primary">';
         text += '<h2 class="card-header">English to <span class="text-primary">IPA</span></h2>';
         text += `<p class="card-body"> ${term} becomes <span class="text-primary">\\ ${phonetics} \\</span></p> `;
         text += '</article>';
-        text += '</div>'
+        text += '</div>';
 
         display.insertAdjacentHTML('afterbegin', text);
     }
@@ -231,11 +270,14 @@ class Assignment {
         return results;
     }
 
-    validate(term) {
+    validate(term, inputForm) {
         if(term !== '') {
+            inputForm.classList.add('is-valid');
+            inputForm.classList.remove('is-invalid');
             return true;
         } else {
-            console.log('need to type something in');
+            inputForm.classList.add('is-invalid');
+            inputForm.classList.remove('is-valid');
             return false;
         }
     }

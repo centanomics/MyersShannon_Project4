@@ -4,168 +4,175 @@
 		"symbol" : "&#109;",
 		"place": "Labial",
 		"manner" : "Nasal",
-		"example": "hi<strong>m</strong>"
+		"example": "hi<strong class='text-primary'>m</strong>"
 	},
 	{
 		"name" : "Alveolar Nasal",
 		"symbol" : "&#110;",
 		"place": "Alveolar",
 		"manner" : "Nasal",
-		"example": "<strong>n</strong>ice"
+		"example": "<strong class='text-primary'>n</strong>ice"
 	},
 	{
 		"name" : "Velar Nasal",
 		"symbol" : "&#331;",
 		"place": "Velar",
 		"manner" : "Nasal",
-		"example": "si<strong>ng</strong>"
+		"example": "si<strong class='text-primary'>ng</strong>"
 	},
 	{
 		"name" : "Voiceless Bilabial Stop",
 		"symbol" : "&#112;",
 		"place": "Bilabial",
 		"manner" : "Plosive",
-		"example": "<strong>p</strong>ain"
+		"example": "<strong class='text-primary'>p</strong>ain"
 	},
 	{
 		"name" : "Voiced Bilabial Stop",
 		"symbol" : "&#98;",
 		"place": "Bilabial",
 		"manner" : "Plosive",
-		"example": "<strong>b</strong>oy"
+		"example": "<strong class='text-primary'>b</strong>oy"
 	},
 	{
 		"name" : "Voiceless Alveolar Stop",
 		"symbol" : "&#116;",
 		"place": "Alveolar",
 		"manner" : "Plosive",
-		"example": "<strong>t</strong>ime"
+		"example": "<strong class='text-primary'>t</strong>ime"
 	},
 	{
 		"name" : "Voiced Alveolar Stop",
 		"symbol" : "&#100;",
 		"place": "Alveolar",
 		"manner" : "Plosive",
-		"example": "<strong>d</strong>ash"
+		"example": "<strong class='text-primary'>d</strong>ash"
 	},
 	{
 		"name" : "Voiceless Postalveolar Affricate",
 		"symbol" : "&#116;​&#643;",
 		"place": "Postalveolar",
 		"manner" : "Plosive",
-		"example": "<strong>ch</strong>ime"
+		"example": "<strong class='text-primary'>ch</strong>ime"
 	},
 	{
 		"name" : "Voiced Postalveolar Affricate",
 		"symbol" : "&#100;​&#658;",
 		"place": "Postalveolar",
 		"manner" : "Plosive",
-		"example": "<strong>j</strong>ump"
+		"example": "<strong class='text-primary'>j</strong>ump"
 	},
 	{
 		"name" : "Voiceless Velar Stop",
 		"symbol" : "k",
 		"place": "Velar",
 		"manner" : "Plosive",
-		"example": "<strong>c</strong>at"
+		"example": "<strong class='text-primary'>c</strong>at"
 	},
 	{
 		"name" : "Voiced Velar Stop",
 		"symbol" : "g",
 		"place": "Velar",
 		"manner" : "Plosive",
-		"example": "<strong>g</strong>ain"
+		"example": "<strong class='text-primary'>g</strong>ain"
 	},
 	{
 		"name" : "Voiceless Labiodental Fricitave",
 		"symbol" : "f",
 		"place": "Labiodental",
 		"manner" : "Fricitave",
-		"example": "<strong>f</strong>ill"
+		"example": "<strong class='text-primary'>f</strong>ill"
 	},
 	{
 		"name" : "Voiced Labiodental Fricitave",
 		"symbol" : "v",
 		"place": "Labiodental",
 		"manner" : "Fricitave",
-		"example": "<strong>v</strong>an"
+		"example": "<strong class='text-primary'>v</strong>an"
 	},
 	{
 		"name" : "Voiceless Dental Fricitave",
 		"symbol" : "θ",
 		"place": "Dental",
 		"manner" : "Fricitave",
-		"example": "<strong>th</strong>in"
+		"example": "<strong class='text-primary'>th</strong>in"
 	},
 	{
 		"name" : "Voiced Dental Fricitave",
 		"symbol" : "ð",
 		"place": "Dental",
 		"manner" : "Fricitave",
-		"example": "<strong>th</strong>is"
+		"example": "<strong class='text-primary'>th</strong>is"
 	},
 	{
 		"name" : "Voiceless Alveolar Fricitave",
 		"symbol" : "s",
 		"place": "Alveolar",
 		"manner" : "Fricitave",
-		"example": "<strong>s</strong>it"
+		"example": "<strong class='text-primary'>s</strong>it"
 	},
 	{
 		"name" : "Voiced Alveolar Fricitave",
 		"symbol" : "z",
 		"place": "Alveolar",
 		"manner" : "Fricitave",
-		"example": "<strong>z</strong>oo"
+		"example": "<strong class='text-primary'>z</strong>oo"
 	},
 	{
 		"name" : "Voiceless Postalveolar Fricitave",
 		"symbol" : "ʃ",
 		"place": "Postalveolar",
 		"manner" : "Fricitave",
-		"example": "<strong>sh</strong>annon"
+		"example": "<strong class='text-primary'>sh</strong>annon"
 	},
 	{
 		"name" : "Voiced Postalveolar Fricitave",
 		"symbol" : "ʒ",
 		"place": "Postalveolar",
 		"manner" : "Fricitave",
-		"example": "vi<strong>si</strong>on"
+		"example": "vi<strong class='text-primary'>si</strong>on"
 	},
 	{
 		"name" : "Alveolar Approximant",
 		"symbol" : "l",
 		"place": "Alveolar",
 		"manner" : "Approximant",
-		"example": "<strong>l</strong>et"
+		"example": "<strong class='text-primary'>l</strong>et"
 	},
 	{
 		"name" : "Postalveolar Approximant",
 		"symbol" : "ɹ",
 		"place": "Postalveolar",
 		"manner" : "Approximant",
-		"example": "<strong>r</strong>ed"
+		"example": "<strong class='text-primary'>r</strong>ed"
 	},
 	{
 		"name" : "Palatal Approximant",
 		"symbol" : "j",
 		"place": "Palatal",
 		"manner" : "Approximant",
-		"example": "<strong>y</strong>ellow"
+		"example": "<strong class='text-primary'>y</strong>ellow"
 	},
 	{
 		"name" : "Voiced Labio-velar Approximant",
 		"symbol" : "w",
 		"place": "Velar",
 		"manner" : "Approximant",
-		"example": "<strong>w</strong>eep"
+		"example": "<strong class='text-primary'>w</strong>eep"
 	},
 	{
 		"name" : "Voiceless Glottal Fricitave",
 		"symbol" : "h",
 		"place": "Glottal",
 		"manner" : "Fricitave",
-		"example": "<strong>h</strong>igh"
+		"example": "<strong class='text-primary'>h</strong>igh"
+	},
+	{
+		"name" : "Glottal Stop",
+		"symbol" : "ʔ",
+		"place": "Glottal",
+		"manner" : "Plosive",
+		"example": "bu<strong class='text-primary'>tt</strong>on"
 	}
 ]
 

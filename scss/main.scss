@@ -6,6 +6,10 @@ div.img {
     background: url("../img/romain-vignes-53940-unsplash.jpg") no-repeat center;
     div.cover {
         background: rgba(255, 255, 255, 0.9);
+
+        @media (max-width: 986px) {
+            background: rgba(255, 255, 255, 1);
+        }
     }
     color: black;
     pre {
@@ -20,7 +24,7 @@ div.img {
 
     h1 {
         font-family: 'adobe-caslon-pro', serif;
-        font-size: 4rem;
+        // font-size: 4rem;
     }
 
 }
@@ -44,6 +48,6 @@ div.img {
     }
 }
 
-strong {
-    color: skyblue;
-}
+// strong {
+//     color: skyblue;
+// }

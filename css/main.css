@@ -6,6 +6,9 @@ div.img {
   color: black; }
   div.img div.cover {
     background: rgba(255, 255, 255, 0.9); }
+    @media (max-width: 986px) {
+      div.img div.cover {
+        background: white; } }
   div.img pre {
     display: inline; }
 
@@ -13,8 +16,7 @@ div.img {
   display: inline; }
 
 .main h1 {
-  font-family: 'adobe-caslon-pro', serif;
-  font-size: 4rem; }
+  font-family: 'adobe-caslon-pro', serif; }
 
 #transcribeForm {
   display: none; }
@@ -26,6 +28,3 @@ div.img {
 
 #searchForm div, #searchForm button {
   display: inline-block; }
-
-strong {
-  color: skyblue; }
